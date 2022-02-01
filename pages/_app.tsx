@@ -1,10 +1,10 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import GlobalStyles from '../styles/global';
 
 const client = new ApolloClient({
   uri: process.env.apiBaseUri,
@@ -12,7 +12,12 @@ const client = new ApolloClient({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return  <ApolloProvider client={client}><Component {...pageProps} /></ApolloProvider>
+  return (  
+    <ApolloProvider client={client}>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 export default MyApp
