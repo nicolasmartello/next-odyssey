@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    apiBaseUri: 'http://localhost:4000'
+    apiBaseUri: 'http://localhost:3000/api/graphql'
   }
 }
 
